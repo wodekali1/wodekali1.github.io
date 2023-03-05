@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Hello World | possible的博客</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="Hello World | possible的博客">
+  <title>go语言time库学习 | possible的博客</title>
+  <meta name="keywords" content=" 读书 ">
+  <meta name="description" content="go语言time库学习 | possible的博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="time库[TOC] 1.数学计算t:&#x3D;time.Now() t.unix()秒 t.UnixMicro()微秒 t.UnixMilli()毫秒 t.UnixNano()纳秒 测量俩个时间的差值用 1234t :&#x3D; time.Now()	fmt.Println(t.Unix(), t.UnixMicro(), t.UnixMilli(), t.UnixNano())	t1 :&#x3D; time">
 <meta property="og:type" content="website">
@@ -365,24 +365,31 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-time库" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">Hello World</h1>
+        <h1 class="article-title">go语言time库学习</h1>
     
     <div class="article-meta">
         
         
         
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color3">读书</a>
+            
+        </span>
         
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2023-03-05 14:38:06'>2023-03-05 14:38</time>
+            Created At : <time class="date" title='Updated At: 2023-03-05 19:52:11'>2023-03-05 19:39</time>
         
     </div>
     <div class="article-meta">
         
-        <span>Count:75</span>
+        <span>Count:161</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -401,7 +408,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#time%E5%BA%93"><span class="toc-text">time库</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%95%B0%E5%AD%A6%E8%AE%A1%E7%AE%97"><span class="toc-text">1.数学计算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%97%B6%E9%97%B4%E5%87%BD%E6%95%B0"><span class="toc-text">2.时间函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-i-x2F-o%E6%93%8D%E4%BD%9C"><span class="toc-text">3.i&#x2F;o操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E7%BC%96%E7%A0%81"><span class="toc-text">4.编码</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -417,20 +424,33 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+        <h1 id="time库"><a href="#time库" class="headerlink" title="time库"></a>time库</h1><p><div class='inner-toc'><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#time%E5%BA%93"><span class="toc-text">time库</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%95%B0%E5%AD%A6%E8%AE%A1%E7%AE%97"><span class="toc-text">1.数学计算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%97%B6%E9%97%B4%E5%87%BD%E6%95%B0"><span class="toc-text">2.时间函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-i-x2F-o%E6%93%8D%E4%BD%9C"><span class="toc-text">3.i&#x2F;o操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E7%BC%96%E7%A0%81"><span class="toc-text">4.编码</span></a></li></ol></li></ol></div></p>
+<h2 id="1-数学计算"><a href="#1-数学计算" class="headerlink" title="1.数学计算"></a>1.数学计算</h2><p>t:&#x3D;time.Now()</p>
+<p>t.unix()秒</p>
+<p>t.UnixMicro()微秒</p>
+<p>t.UnixMilli()毫秒</p>
+<p>t.UnixNano()纳秒</p>
+<p>测量俩个时间的差值用</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">t := time.Now()</span><br><span class="line">	fmt.Println(t.Unix(), t.UnixMicro(), t.UnixMilli(), t.UnixNano())</span><br><span class="line">	t1 := time.Since(t)</span><br><span class="line">	fmt.Println(t1.Seconds())</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
+<p>还可以用另一种方式</p>
+<p>用t1减去t</p>
+<p>begin :&#x3D;time.now()</p>
+<p>fmt.Println(begin.Unix())</p>
+<p>end :&#x3D;time.now()</p>
+<p>t3:&#x3D;end.sub(begin)</p>
+<p>fmt.println(t3.hour())</p>
+<p>加法</p>
+<p>begin :&#x3D;time.now()</p>
+<p>fmt.Println(begin.Unix())</p>
+<p>dua :&#x3D;time.duration(8*time.hour)</p>
+<p>end:&#x3D;begin.add(dua)</p>
+<h2 id="2-时间函数"><a href="#2-时间函数" class="headerlink" title="2.时间函数"></a>2.时间函数</h2><p>begin :&#x3D;time.now()</p>
+<p>fmt.println(begin.format(“2006-01-02 15:04:05”))</p>
+<p>fmt.println(begin.format(“20060102”))   </p>
+<p>const loc&#x3D;time.parseInLocation(“Asia&#x2F;Shanghai”) </p>
+<p>t,err :&#x3D; time.ParseInLocation(TIME_FMT2,””,loc);</p>
+<h2 id="3-i-x2F-o操作"><a href="#3-i-x2F-o操作" class="headerlink" title="3.i&#x2F;o操作"></a>3.i&#x2F;o操作</h2><h2 id="4-编码"><a href="#4-编码" class="headerlink" title="4.编码"></a>4.编码</h2>
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
     </div>

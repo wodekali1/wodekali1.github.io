@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-03-05T06:38:06.423Z</updated>
+  <updated>2023-03-05T11:52:11.252Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>go语言time库学习</title>
+    <link href="http://example.com/2023/03/05/time%E5%BA%93/"/>
+    <id>http://example.com/2023/03/05/time%E5%BA%93/</id>
+    <published>2023-03-05T11:39:08.000Z</published>
+    <updated>2023-03-05T11:52:11.252Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="time库"><a href="#time库" class="headerlink" title="time库"></a>time库</h1><p>[TOC]</p><h2 id="1-数学计算"><a href="#1-数学计算" class="headerlink" title="1.数学计算"></a>1.数学计算</h2><p>t:&#x3D;time.Now()</p><p>t.unix()秒</p><p>t.UnixMicro()微秒</p><p>t.UnixMilli()毫秒</p><p>t.UnixNano()纳秒</p><p>测量俩个时间的差值用</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">t := time.Now()</span><br><span class="line">fmt.Println(t.Unix(), t.UnixMicro(), t.UnixMilli(), t.UnixNano())</span><br><span class="line">t1 := time.Since(t)</span><br><span class="line">fmt.Println(t1.Seconds())</span><br></pre></td></tr></table></figure><p>还可以用另一种方式</p><p>用t1减去t</p><p>begin :&#x3D;time.now()</p><p>fmt.Println(begin.Unix())</p><p>end :&#x3D;time.now()</p><p>t3:&#x3D;end.sub(begin)</p><p>fmt.println(t3.hour())</p><p>加法</p><p>begin :&#x3D;time.now()</p><p>fmt.Println(begin.Unix())</p><p>dua :&#x3D;time.duration(8*time.hour)</p><p>end:&#x3D;begin.add(dua)</p><h2 id="2-时间函数"><a href="#2-时间函数" class="headerlink" title="2.时间函数"></a>2.时间函数</h2><p>begin :&#x3D;time.now()</p><p>fmt.println(begin.format(“2006-01-02 15:04:05”))</p><p>fmt.println(begin.format(“20060102”))   </p><p>const loc&#x3D;time.parseInLocation(“Asia&#x2F;Shanghai”) </p><p>t,err :&#x3D; time.ParseInLocation(TIME_FMT2,””,loc);</p><h2 id="3-i-x2F-o操作"><a href="#3-i-x2F-o操作" class="headerlink" title="3.i&#x2F;o操作"></a>3.i&#x2F;o操作</h2><h2 id="4-编码"><a href="#4-编码" class="headerlink" title="4.编码"></a>4.编码</h2>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;time库&quot;&gt;&lt;a href=&quot;#time库&quot; class=&quot;headerlink&quot; title=&quot;time库&quot;&gt;&lt;/a&gt;time库&lt;/h1&gt;&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;h2 id=&quot;1-数学计算&quot;&gt;&lt;a href=&quot;#1-数学计算&quot; class=&quot;headerl</summary>
+      
+    
+    
+    
+    
+    <category term="读书" scheme="http://example.com/tags/%E8%AF%BB%E4%B9%A6/"/>
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
